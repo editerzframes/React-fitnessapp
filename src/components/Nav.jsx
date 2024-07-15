@@ -15,9 +15,4 @@ export default function Nav() {
     </Navbar>
   );
 
-  return (
-    <div className={styles.nav}>
-      <img src={logo} alt="logo" />7 Hormone
-    </div>
-  );
 }
