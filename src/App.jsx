@@ -1,28 +1,32 @@
-import FoodList from "./components/FoodList";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Nav from "./components/Nav";
-import Search from "./components/Search";
-import { useState } from "react";
 import "./App.css";
-import Container from "./components/Container";
-import InnerContainer from "./components/InnerContainer";
-import FoodDetails from "./components/FoodDetails";
+import Login from "./screens/auth/Login";
+import Dashboard from "./screens/main/Dashboard/Dashboard";
+import useToken from "./components/useToken";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [foodData, setFoodData] = useState([]);
-  const [foodId, setFoodId] = useState("");
+  const { token, setToken, userData } = useToken();
+
   return (
-    <div className="App">
+    <Router>
       <Nav />
-      <Search foodData={foodData} setFoodData={setFoodData} />
-      <Container>
-        <InnerContainer>
-          <FoodList foodData={foodData} setFoodId={setFoodData} />
-        </InnerContainer>
-        <InnerContainer>
-          <FoodDetails />
-        </InnerContainer>
-      </Container>
-    </div>
+      <Routes>
+        {!token ? (
+          <Route path="/login" element={<Login setToken={setToken} />} />
+        ) : (
+          <Route path="*" element={<Navigate to="/dashboard" />} />
+        )}
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
 }
 

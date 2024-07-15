@@ -1,0 +1,46 @@
+.title {
+  margin: 0 auto;
+  text-align: center;
+  margin: 20px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.loginForm {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+}
+
+.loginForm label {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 10px;
+}
+
+.loginForm input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  height: 30px;
+}
+
+.loginForm button {
+  margin: 0 auto;
+  display: block;
+  width: 20%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #00e2b3;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 5px;
+}
