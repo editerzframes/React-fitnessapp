@@ -10,12 +10,21 @@ import Header from "./components/Header";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { styled, useTheme } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard({ DrawerHeader }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { token, userData } = useToken();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(!token){
+      navigate("/login");
+      return;
+    }
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
