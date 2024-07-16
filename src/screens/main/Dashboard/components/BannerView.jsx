@@ -1,4 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
+import styles from '../css/bannerview.module.css';
 
 function BannerView({ banners }) {
   return (
@@ -6,7 +7,7 @@ function BannerView({ banners }) {
       {banners.map((banner) => (
         <Carousel.Item key={banner.id}>
           <img
-            className="d-block w-100 h-30"
+            className={`${styles.image} d-block w-100 h-30`}
             src={banner.image}
             alt={banner.title}
           />
