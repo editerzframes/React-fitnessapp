@@ -11,7 +11,7 @@ import Dashboard from "./screens/main/Dashboard/Dashboard";
 import useToken from "./components/useToken";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Main from "./components/layouts/Main";
-import Home from "./screens/main/Home";
+import Home from "./screens/main/Home/Home";
 import AuthComp from "./AuthComp";
 
 function App() {
